@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.vscode/
+.DS_Store
+.idea
+
+# Wails bin directory
+build/bin
+
+# Don't save the public folder. It shoud be compiled each time.
+frontend/dist
+
+# Binaries zipped
+*.zip
+
+vendor

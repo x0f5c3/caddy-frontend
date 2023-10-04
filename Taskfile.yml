@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+output: prefixed
+
+dotenv:
+  - '.wails.env'
+
+
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  install_wails:
+    cmds:
+      - go install github.com/wailsapp/wails/v2/cmd/wails@latest
+      - echo "WAILS_INSTALLED=1" > .wails.env
+    requires:
+      vars:
+        - WAILS_INSTALLED
+  build:
+    cmds:
+      - wails build --clean
